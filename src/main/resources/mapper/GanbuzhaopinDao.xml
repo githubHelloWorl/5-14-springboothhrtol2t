@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GanbuzhaopinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GanbuzhaopinEntity" id="ganbuzhaopinMap">
+        <result property="gangweimingcheng" column="gangweimingcheng"/>
+        <result property="zhaopinfengmian" column="zhaopinfengmian"/>
+        <result property="gongzuodidian" column="gongzuodidian"/>
+        <result property="gongzuoshijian" column="gongzuoshijian"/>
+        <result property="xinzidaiyu" column="xinzidaiyu"/>
+        <result property="zhaopinrenshu" column="zhaopinrenshu"/>
+        <result property="fuzeren" column="fuzeren"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="faburiqi" column="faburiqi"/>
+        <result property="gangweixiangqing" column="gangweixiangqing"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="storeupnum" column="storeupnum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GanbuzhaopinVO" >
+		SELECT * FROM ganbuzhaopin  ganbuzhaopin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GanbuzhaopinVO" >
+		SELECT  ganbuzhaopin.* FROM ganbuzhaopin  ganbuzhaopin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GanbuzhaopinView" >
+
+		SELECT  ganbuzhaopin.* FROM ganbuzhaopin  ganbuzhaopin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GanbuzhaopinView" >
+		SELECT * FROM ganbuzhaopin  ganbuzhaopin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
